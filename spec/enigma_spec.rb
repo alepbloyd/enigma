@@ -56,6 +56,16 @@ RSpec.describe Enigma do
 
   it 'returns character offset by specified number' do
     expect(@enigma.shift_character("h",3)).to eq("k")
+
+    expect(@enigma.shift_character("e",27)).to eq("e")
+
+    expect(@enigma.shift_character("l",73)).to eq("d")
+
+    expect(@enigma.shift_character("l",20)).to eq("e")
+
+    expect(@enigma.shift_character("o",3)).to eq("r")
+
+    expect(@enigma.shift_character(" ",27)).to eq(" ")
   end
 
   xit 'returns hash of encryption, key, and date' do
