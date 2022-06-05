@@ -1,6 +1,7 @@
 require 'simplecov'
 SimpleCov.start
 require './lib/enigma'
+require "pry"
 
 RSpec.describe Enigma do
 
