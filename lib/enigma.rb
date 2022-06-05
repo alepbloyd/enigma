@@ -61,4 +61,39 @@ class Enigma
     string.chars
   end
 
+  def encrypt(message,key,date)
+    a_key = a_key(key)
+    b_key = b_key(key)
+    c_key = c_key(key)
+    d_key = d_key(key)
+
+    a_offset = a_offset(date)
+    b_offset = b_offset(date)
+    c_offset = c_offset(date)
+    d_offset = d_offset(date)
+
+    message_array = string_to_array(message)
+
+    return_array = []
+    return_hash = {}
+
+    message_array.each_with_index do |character,index|
+      if (index + 1) % 4 == 0 || (index + 1 == 4)
+        return_array << shift_character(character,d_key.to_i + d_offset)
+      elsif (index + 1) % 4 == 3 || (index + 1 == 3)
+        return_array << shift_character(character,c_key.to_i + c_offset)
+      elsif (index + 1) % 4 == 2 || (index + 1 == 2)
+        return_array << shift_character(character,b_key.to_i + b_offset)
+      elsif (index + 1) % 4 == 1 || (index + 1 == 1)
+        return_array << shift_character(character,a_key.to_i + a_offset)
+      end
+    end
+
+    return_hash[:encryption] = return_array.join("")
+    return_hash[:key] = key
+    return_hash[:date] = date
+
+    return_hash
+  end
+
 end
