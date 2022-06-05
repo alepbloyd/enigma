@@ -12,6 +12,11 @@ RSpec.describe Enigma do
     expect(@enigma).to be_instance_of (Enigma)
   end
 
+  it 'initializes with array of characters' do
+    expect(@enigma.character_set).to be_instance_of (Array)
+    expect(@enigma.character_set).to eq (["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
+  end
+
   it 'returns "A" key from number' do
     expect(@enigma.a_key('02715')).to eq('02')
   end
