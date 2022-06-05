@@ -28,6 +28,10 @@ RSpec.describe Enigma do
     expect(@enigma.d_key('02715')).to eq('15')
   end
 
+  it 'returns "A" offset from date' do
+    expect(@enigma.squared_date('040895')).to eq(1672401025)
+  end
+
   xit 'returns hash of encryption, key, and date' do
 
     expect(enigma.encrypt("hello world", "02715", "040895")).to be_instance_of(Hash)
