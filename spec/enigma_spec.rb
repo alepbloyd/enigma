@@ -74,11 +74,11 @@ RSpec.describe Enigma do
     expect(@enigma.string_to_array("hello world")).to eq (['h','e','l','l','o',' ','w','o','r','l','d'])
   end
 
-  xit 'returns hash of encryption, key, and date' do
+  it 'returns hash of encryption, key, and date' do
 
-    expect(enigma.encrypt("hello world", "02715", "040895")).to be_instance_of(Hash)
+    expect(@enigma.encrypt("hello world", "02715", "040895")).to be_instance_of(Hash)
 
-    expect(enigma.encrypt("hello world", "02715", "040895")).to eq({
+    expect(@enigma.encrypt("hello world", "02715", "040895")).to eq({
       encryption: "keder ohulw",
       key: "02715",
       date: "040895"
