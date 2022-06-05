@@ -9,4 +9,8 @@ class Enigma
     string[0,2]
   end
 
+  def b_key(string)
+    string[1,2]
+  end
+
 end
