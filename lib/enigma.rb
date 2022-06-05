@@ -21,4 +21,8 @@ class Enigma
     string[3,2]
   end
 
+  def squared_date(date)
+    date.to_i ** 2
+  end
+
 end
