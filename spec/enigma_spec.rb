@@ -24,6 +24,10 @@ RSpec.describe Enigma do
     expect(@enigma.c_key('02715')).to eq('71')
   end
 
+  it 'returns "D" key from number' do
+    expect(@enigma.d_key('02715')).to eq('15')
+  end
+
   xit 'returns hash of encryption, key, and date' do
 
     expect(enigma.encrypt("hello world", "02715", "040895")).to be_instance_of(Hash)
