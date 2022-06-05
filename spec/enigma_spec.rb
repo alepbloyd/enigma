@@ -4,15 +4,22 @@ require './lib/enigma'
 
 RSpec.describe Enigma do
 
-  it 'exists' do
-    enigma = Enigma.new
+  before(:each) do
+    @enigma = Enigma.new
   end
 
-  it 'returns hash of encryption, key, and date' do
-    enigma = Enigma.new
+  it 'exists' do
+    expect(@enigma).to be_instance_of (Enigma)
+  end
+
+  it 'returns "A" key from number' do
+    expect(@enigma.a_key('02715')).to eq('02')
+  end
+
+  xit 'returns hash of encryption, key, and date' do
 
     expect(enigma.encrypt("hello world", "02715", "040895")).to be_instance_of(Hash)
-    
+
     expect(enigma.encrypt("hello world", "02715", "040895")).to eq({
       encryption: "keder ohulw",
       key: "02715",
