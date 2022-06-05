@@ -13,4 +13,8 @@ class Enigma
     string[1,2]
   end
 
+  def c_key(string)
+    string[2,2]
+  end
+
 end
