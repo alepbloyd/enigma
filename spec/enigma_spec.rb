@@ -68,6 +68,12 @@ RSpec.describe Enigma do
     expect(@enigma.shift_character(" ",27)).to eq(" ")
   end
 
+  it 'returns input string as array' do
+    expect(@enigma.input_array("hello world")).to be_instance_of (Array)
+
+    expect(@enigma.input_array("hello world")).to eq (['h','e','l','l','o',' ','w','o','r','l','d']) 
+  end
+
   xit 'returns hash of encryption, key, and date' do
 
     expect(enigma.encrypt("hello world", "02715", "040895")).to be_instance_of(Hash)
