@@ -57,4 +57,8 @@ class Enigma
     end
   end
 
+  def string_to_array(string)
+    string.chars
+  end
+
 end
