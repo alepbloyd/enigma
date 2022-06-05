@@ -17,4 +17,8 @@ class Enigma
     string[2,2]
   end
 
+  def d_key(string)
+    string[3,2]
+  end
+
 end
