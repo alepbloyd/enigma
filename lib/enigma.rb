@@ -37,4 +37,8 @@ class Enigma
     squared_date(date).to_s[-2].to_i
   end
 
+  def d_offset(date)
+    squared_date(date).to_s[-1].to_i
+  end
+
 end
