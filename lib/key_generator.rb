@@ -50,4 +50,8 @@ class KeyGenerator
     first_five_ord_numbers_joined ** 2
   end
 
+  def key_from_password
+    first_five_ord_numbers_joined_and_squared.to_s[-5,5]
+  end
+
 end
