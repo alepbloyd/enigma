@@ -28,4 +28,11 @@ RSpec.describe Encryptor do
     expect(@encryptor_with_password_and_date).to be_instance_of(Encryptor)
   end
 
+  it 'returns input string' do
+    expect(@encryptor_with_number.input_message).to eq("hello world")
+    expect(@encryptor_with_number_and_date.input_message).to eq("hello world")
+    expect(@encryptor_with_password.input_message).to eq("hello world")
+    expect(@encryptor_with_password_and_date.input_message).to eq("hello world")
+  end
+
 end
