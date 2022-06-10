@@ -18,8 +18,10 @@ RSpec.describe KeyGenerator do
     expect(@key_generator.length).to eq(5)
   end
 
-  xit 'generates a digit' do
-    expect(@number_generator)
+  it 'generates a digit' do
+    allow(@key_generator).to receive(:generate_digit).and_return(8)
+
+    expect(@key_generator.generate_digit).to eq(8)
   end
 
 end
