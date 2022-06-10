@@ -21,10 +21,10 @@ class KeyGenerator
     input_chars.all? {|char| char.to_s == char.to_i.to_s}
   end
 
-  def generate_five_digit_key
+  def code_key
     if @input == nil
       generate_random_five_digit_key
-    elsif @input.input_five_digit_string?
+    elsif input_five_digit_string?
       @input
     else
       key_from_password
