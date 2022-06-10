@@ -39,4 +39,12 @@ RSpec.describe KeyGenerator do
     expect(@key_generator2.input_hash_first_5).to eq("q84k4")
   end
 
+  it 'returns ord numbers for first five characters of base64 hash' do
+    expect(@key_generator2.ord_numbers_for_first_five).to eq([113,56,52,107,52])
+  end
+
+  it 'sums first five ord numbers joined' do
+    expect(@key_generator2.first_five_ord_numbers_joined).to eq(113565210752)
+  end
+
 end
