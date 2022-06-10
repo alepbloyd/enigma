@@ -28,6 +28,12 @@ RSpec.describe DateGenerator do
     expect(@date_generator_bad_length.valid_length?).to be false
   end
 
+  it 'checks validity of month of date input' do
+    expect(@date_generator_with_input.valid_month?).to be true
+
+    expect(@date_generator_bad_month.valid_month?).to be false
+  end
+
   xit 'returns input if input in correct format' do
 
   end
