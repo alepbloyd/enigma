@@ -7,7 +7,12 @@ class DateGenerator
   attr_reader :input
 
   def initialize(input = nil)
-    @input = input
+    @input = input.to_s
   end
+
+  def valid_length?
+    @input.length == 6
+  end
+
 
 end
