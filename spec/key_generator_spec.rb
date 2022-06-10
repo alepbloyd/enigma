@@ -4,8 +4,6 @@ require './lib/enigma'
 require './lib/key_generator'
 require 'digest'
 
-require "pry"
-
 RSpec.describe KeyGenerator do
 
   before(:each) do
