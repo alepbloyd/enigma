@@ -5,12 +5,14 @@ require 'digest'
 class Encryptor
 
   attr_reader :input_message,
-              :input_key,
+              :code_key,
               :input_date
 
-  def initialize(input_message,input_key = nil,input_date = nil)
+  def initialize(input_message,code_key = nil,input_date = nil)
+    key_gen = KeyGenerator.new(code_key)
+
     @input_message = input_message
-    @input_key = input_key
+    @code_key = key_gen.code_key
     @input_date = input_date
   end
 
