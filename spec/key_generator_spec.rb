@@ -29,4 +29,10 @@ RSpec.describe KeyGenerator do
     expect(@key_generator2.length).to eq(9)
   end
 
+  it 'returns random digit between 0 and 9' do
+    allow(@key_generator1).to receive(:random_digit).and_return(8)
+
+    expect(@key_generator1.random_digit).to eq(8)
+  end
+
 end
