@@ -23,7 +23,9 @@ RSpec.describe KeyGenerator do
 
   it 'returns length of integer inputs' do
     expect(@key_generator1.length).to eq(5)
+  end
 
+  it 'returns length of string inputs' do
     expect(@key_generator2.length).to eq(9)
   end
 

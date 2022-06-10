@@ -13,8 +13,11 @@ class KeyGenerator
 
   def length
     if @input_data_type == Integer
-
+      @input
+    elsif @input_data_type == String
+      @input.length
     end
+
   end
 
 end
