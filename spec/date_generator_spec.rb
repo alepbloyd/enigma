@@ -11,12 +11,21 @@ RSpec.describe DateGenerator do
   before(:each) do
     @date_generator_with_input = DateGenerator.new('040895')
     @date_generator_no_input = DateGenerator.new
+    @date_generator_bad_length = DateGenerator.new("1212121")
+    @date_generator_bad_day = DateGenerator.new("350892")
+    @date_generator_bad_month = DateGenerator.new("351392")
   end
 
   it 'exists' do
     expect(@date_generator_with_input).to be_instance_of(DateGenerator)
 
     expect(@date_generator_no_input).to be_instance_of(DateGenerator)
+  end
+
+  it "checks input date format for length validity" do
+    expect(@date_generator_with_input.valid_length?).to be true
+
+    expect(@date_generator_bad_length.valid_length?).to be false
   end
 
   xit 'returns input if input in correct format' do
