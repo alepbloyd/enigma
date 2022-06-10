@@ -51,4 +51,8 @@ RSpec.describe KeyGenerator do
     expect(@key_generator2.first_five_ord_numbers_joined_and_squared).to eq(12897057093146176405504)
   end
 
+  it 'returns string of last five digits of squared ord numbers' do
+    expect(@key_generator2.key_from_password).to eq('05504')
+  end
+
 end
