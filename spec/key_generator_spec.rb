@@ -47,4 +47,8 @@ RSpec.describe KeyGenerator do
     expect(@key_generator2.first_five_ord_numbers_joined).to eq(113565210752)
   end
 
+  it 'returns square of joined ord numbers' do
+    expect(@key_generator2.first_five_ord_numbers_joined_and_squared).to eq(113565210752)
+  end
+
 end
