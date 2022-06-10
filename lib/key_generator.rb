@@ -6,19 +6,25 @@ require 'digest'
 class KeyGenerator
 
   attr_reader :input,
-              :input_data_type,
               :input_hash
 
   def initialize(input = nil)
     @input = input
-    @input_data_type = input.class
     @input_hash = Digest::SHA1.base64digest(input.to_s)
+  end
+
+  def input_five_digit_string?
+    if @input == nil
+      return false
+    end
+    input_chars = @input.split("")
+    input_chars.all? {|char| char.to_s == char.to_i.to_s}
   end
 
   def generate_five_digit_key
     if @input == nil
       generate_random_five_digit_key
-    elsif @input.five_digit_string?
+    elsif @input.input_five_digit_string?
       @input
     else
       key_from_password
