@@ -1,14 +1,20 @@
+require 'pry'
+
 class KeyGenerator
 
-  attr_reader :length
+  attr_reader :input,
+              :input_data_type
 
-  def initialize(length)
-    @length = length.to_i
+  def initialize(input)
+    @input = input
+    @input_data_type = input.class
+    # binding.pry
   end
 
-  def generate_digit
-    rand(9)
-  end
+  def length
+    if @input_data_type == Integer
 
+    end
+  end
 
 end
