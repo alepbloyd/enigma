@@ -16,19 +16,13 @@ RSpec.describe KeyGenerator do
   end
 
   it 'returns input_type' do
-    expect(@key_generator1.input_type).to eq(Integer)
+    expect(@key_generator1.input_data_type).to be Integer
 
-    expect(@key_generator2.input_type).to eq(String)
+    expect(@key_generator2.input_data_type).to be String
   end
 
-  it 'returns length of integer inputs' do
+  xit 'returns length of integer inputs' do
     expect(@key_generator1.length).to eq(5)
   end
-
-  # it 'generates a digit' do
-  #   allow(@key_generator).to receive(:generate_digit).and_return(8)
-  #
-  #   expect(@key_generator.generate_digit).to eq(8)
-  # end
 
 end
