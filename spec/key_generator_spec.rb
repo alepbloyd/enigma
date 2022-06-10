@@ -58,4 +58,14 @@ RSpec.describe KeyGenerator do
     expect(@key_generator3.input_five_digit_string?).to be false
   end
 
+  it 'returns key for input' do
+    expect(@key_generator1.code_key).to eq('27150')
+
+    expect(@key_generator2.code_key).to eq('05504')
+
+    allow(@key_generator3).to receive(:code_key).and_return('86753')
+
+    expect(@key_generator3.code_key).to eq('86753')
+  end
+
 end
