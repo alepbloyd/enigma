@@ -9,21 +9,13 @@ require "pry"
 RSpec.describe KeyGenerator do
 
   before(:each) do
-    @key_generator1 = KeyGenerator.new(27150)
+    @key_generator1 = KeyGenerator.new("27150")
     @key_generator2 = KeyGenerator.new("Beefaroni")
     @key_generator3 = KeyGenerator.new
   end
 
   it 'exists' do
     expect(@key_generator1).to be_instance_of(KeyGenerator)
-  end
-
-  it 'returns integer if input is integer' do
-    expect(@key_generator1.input_data_type).to be Integer
-  end
-
-  it 'returns string if input is string' do
-    expect(@key_generator2.input_data_type).to be String
   end
 
   it 'returns random digit between 0 and 9' do
@@ -58,6 +50,12 @@ RSpec.describe KeyGenerator do
 
   it 'generates random five digit string' do
     expect(@key_generator3.generate_random_five_digit_key).to eq(5)
+  end
+
+  it 'checks if input is a five digit string' do
+    expect(@key_generator1.input_five_digit_string?).to be true
+    expect(@key_generator2.input_five_digit_string?).to be false
+    expect(@key_generator3.input_five_digit_string?).to be false
   end
 
 end
