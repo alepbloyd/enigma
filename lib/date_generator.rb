@@ -14,5 +14,8 @@ class DateGenerator
     @input.length == 6
   end
 
-
+  def valid_month?
+    month_string = @input[2..3]
+    month_string.to_i > 0 && month_string.to_i <= 12
+  end
 end
