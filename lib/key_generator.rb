@@ -14,7 +14,7 @@ class KeyGenerator
               :input_hash,
               :input_hash_first_5
 
-  def initialize(input)
+  def initialize(input = nil)
     @input = input
     @input_data_type = input.class
     @input_hash = Digest::SHA1.base64digest(input.to_s)

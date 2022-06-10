@@ -11,6 +11,7 @@ RSpec.describe KeyGenerator do
   before(:each) do
     @key_generator1 = KeyGenerator.new(27150)
     @key_generator2 = KeyGenerator.new("Beefaroni")
+    @key_generator3 = KeyGenerator.new
   end
 
   it 'exists' do
