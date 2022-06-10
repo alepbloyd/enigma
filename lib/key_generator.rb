@@ -46,4 +46,8 @@ class KeyGenerator
     ord_numbers_for_first_five.map {|number| number.to_s}.join.to_i
   end
 
+  def first_five_ord_numbers_joined_and_squared
+    first_five_ord_numbers_joined ** 2
+  end
+
 end
