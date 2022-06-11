@@ -28,4 +28,10 @@ RSpec.describe Decryptor do
     expect(@example_with_password.encrypted_message).to eq("kfnfrayiumf")
   end
 
+  it 'returns five digit key' do
+    expect(@example_decryptor.key).to eq("02715")
+
+    expect(@example_with_password.key).to eq("02816")
+  end
+
 end
