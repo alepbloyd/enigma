@@ -158,4 +158,8 @@ RSpec.describe Encryptor do
   it 'returns total d_shift' do
     expect(@encryptor_with_number_and_date.d_shift).to eq(26)
   end
+
+  it 'returns input message as array' do
+    expect(@encryptor_with_number_and_date.input_array).to eq(['h','e','l','l','o',' ','w','o','r','l','d'])
+  end
 end
