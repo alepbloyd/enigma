@@ -55,7 +55,7 @@ class Decryptor
   end
 
   def input_array
-    @encrypted_message.chars
+    @encrypted_message.downcase.chars
   end
 
   def decrypt
