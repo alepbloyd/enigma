@@ -40,4 +40,16 @@ RSpec.describe Decryptor do
     expect(@example_with_password.date).to eq("040895")
   end
 
+  it 'returns character shifted by specified amount' do
+    expect(@example_decryptor.shift_character("k",3)).to eq("h")
+
+    expect(@example_decryptor.shift_character("e",27)).to eq("e")
+
+    expect(@example_decryptor.shift_character("d",73)).to eq("l")
+
+    expect(@example_decryptor.shift_character("e",20)).to eq("l")
+
+    expect(@example_decryptor.shift_character("r",3)).to eq("o")
+  end
+
 end
