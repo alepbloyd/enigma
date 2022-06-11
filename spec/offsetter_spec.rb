@@ -16,4 +16,8 @@ RSpec.describe Offsetter do
     expect(@offsetter).to be_instance_of(Offsetter)
   end
 
+  it 'returns squared date' do
+    expect(@offsetter.squared_date).to eq(1672401025)
+  end
+
 end
