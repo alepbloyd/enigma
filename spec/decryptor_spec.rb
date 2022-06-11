@@ -52,4 +52,17 @@ RSpec.describe Decryptor do
     expect(@example_decryptor.shift_character("r",3)).to eq("o")
   end
 
+  it 'returns decrypt hash' do
+    expect(@example_decryptor.decrypt).to eq({
+      decryption: "hello world",
+      key: "02715",
+      date: "040895"
+      })
+
+    expect(@example_with_password.decrypt).to eq({
+      decryption: "hello world",
+      key: "SpaghettiBoi",
+      date: "040895"
+      })
+    end
 end
