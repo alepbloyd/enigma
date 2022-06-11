@@ -2,6 +2,7 @@ require 'simplecov'
 SimpleCov.start
 require './lib/enigma'
 require './lib/key_generator'
+require './lib/date_generator'
 require './lib/encryptor'
 require 'digest'
 
@@ -34,9 +35,13 @@ RSpec.describe Encryptor do
 
   it 'returns input message' do
     expect(@encryptor_only_message.input_message).to eq("hello world")
+
     expect(@encryptor_with_number.input_message).to eq("hello world")
+
     expect(@encryptor_with_number_and_date.input_message).to eq("hello world")
+
     expect(@encryptor_with_password.input_message).to eq("hello world")
+
     expect(@encryptor_with_password_and_date.input_message).to eq("hello world")
   end
 
@@ -52,7 +57,18 @@ RSpec.describe Encryptor do
     expect(@encryptor_with_password.code_key).to eq('05504')
 
     expect(@encryptor_with_password_and_date.code_key).to eq('02816')
+  end
 
+  it 'returns date' do
+    expect(@encryptor_only_message.date).to eq('100622')
+
+    expect(@encryptor_with_number.date).to eq('100622')
+
+    expect(@encryptor_with_number_and_date.date).to eq('040895')
+
+    expect(@encryptor_with_password.date).to eq('100622')
+
+    expect(@encryptor_with_password_and_date.date).to eq('040895')
   end
 
 end
