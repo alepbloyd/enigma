@@ -20,6 +20,8 @@ RSpec.describe Encryptor do
     @encryptor_with_password = Encryptor.new("hello world","Beefaroni")
 
     @encryptor_with_password_and_date = Encryptor.new("hello world","SpaghettiBoi","040895")
+
+    @encryptor_example = Encryptor.new("hello world", "02715", "040895")
   end
 
   it 'exists' do
@@ -161,5 +163,9 @@ RSpec.describe Encryptor do
 
   it 'returns input message as array' do
     expect(@encryptor_with_number_and_date.input_array).to eq(['h','e','l','l','o',' ','w','o','r','l','d'])
+  end
+
+  it 'encrypts message based on key and date' do
+    expect(@encryptor_example.encrypt).to eq("keder ohulw")
   end
 end
