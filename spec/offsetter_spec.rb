@@ -32,4 +32,8 @@ RSpec.describe Offsetter do
     expect(@offsetter.c_offset).to eq(2)
   end
 
+  it 'returns d_offset' do
+    expect(@offsetter.d_offset).to eq(5)
+  end
+
 end
