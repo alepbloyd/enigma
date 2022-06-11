@@ -50,4 +50,14 @@ class Encryptor
                       "z", " "]
   end
 
+  def shift_character(start_character,shift_amount)
+    index = @character_set.index(start_character)
+    return_index = index + shift_amount
+    if return_index > 27
+      @character_set[return_index % 27]
+    else
+      return @character_set[return_index]
+    end
+  end
+
 end
