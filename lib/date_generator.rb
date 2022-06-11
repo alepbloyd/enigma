@@ -1,21 +1,19 @@
 require 'key_generator'
 require 'enigma'
 require 'digest'
+require 'date'
 
 class DateGenerator
 
-  attr_reader :input
+  attr_reader :date
 
   def initialize(input = nil)
-    @input = input.to_s
+    if input == nil
+      @date = Date.today.strftime("%e%m%y").to_s
+    else
+      @date = input
+    end
   end
 
-  def valid_length?
-    @input.length == 6
-  end
 
-  def valid_month?
-    month_string = @input[2..3]
-    month_string.to_i > 0 && month_string.to_i <= 12
-  end
 end
