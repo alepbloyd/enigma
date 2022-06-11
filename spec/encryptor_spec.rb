@@ -150,4 +150,8 @@ RSpec.describe Encryptor do
   it 'returns total b_shift' do
     expect(@encryptor_with_number_and_date.b_shift).to eq(21)
   end
+
+  it 'returns total c_shift' do
+    expect(@encryptor_with_number_and_date.c_shift).to eq(14)
+  end
 end
