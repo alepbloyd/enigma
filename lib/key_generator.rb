@@ -1,7 +1,5 @@
 require 'digest'
 
-# this is a sort of self assigned extension, thought it would be interesting to see if I could have the user input take strings as passwords instead of a five digit code, and then convert password to five digit code to work with the rest of the program
-
 class KeyGenerator
 
   attr_reader :input,
