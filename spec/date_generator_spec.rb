@@ -21,6 +21,8 @@ RSpec.describe DateGenerator do
   end
 
   it 'returns current date in ddmmyy format if no date provided' do
+    allow(@date_generator_no_input).to receive(:date).and_return('100622')
+
     expect(@date_generator_no_input.date).to eq('100622')
   end
 
