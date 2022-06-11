@@ -24,4 +24,8 @@ RSpec.describe ABCDKeySetter do
     expect(@key_setter.b_key).to eq('27')
   end
 
+  it 'returns c_key' do
+    expect(@key_setter.c_key).to eq('71')
+  end
+
 end
