@@ -117,4 +117,7 @@ RSpec.describe Encryptor do
     expect(@encryptor_with_number_and_date.a_offset).to eq(1)
   end
 
+  it 'returns b_offset' do
+    expect(@encryptor_with_number_and_date.b_offset).to eq(0)
+  end
 end
