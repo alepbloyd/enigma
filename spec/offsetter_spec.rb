@@ -24,4 +24,8 @@ RSpec.describe Offsetter do
     expect(@offsetter.a_offset).to eq(1)
   end
 
+  it 'returns b_offset' do
+    expect(@offsetter.b_offset).to eq(0)
+  end
+
 end
