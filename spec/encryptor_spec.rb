@@ -189,4 +189,14 @@ RSpec.describe Encryptor do
       })
   end
 
+  it 'encrypts uppercase characters as lowercase' do
+    @encryptor_example_uppercase = Encryptor.new("hElLo wORlD!", "02715", "040895")
+
+    expect(@encryptor_example_uppercase.encrypt).to eq({
+      encryption: "keder ohulw!",
+      key: "02715",
+      date: "040895"
+      })
+  end
+
 end
