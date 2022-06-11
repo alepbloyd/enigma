@@ -22,8 +22,10 @@ RSpec.describe Decryptor do
     expect(@example_with_password).to be_instance_of(Decryptor)
   end
 
-  xit 'returns encrypted message' do
+  it 'returns encrypted message' do
+    expect(@example_decryptor.encrypted_message).to eq("keder ohulw")
 
+    expect(@example_with_password.encrypted_message).to eq("kfnfrayiumf")
   end
 
 end
