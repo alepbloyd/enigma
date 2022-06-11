@@ -15,4 +15,12 @@ RSpec.describe Enigma do
     expect(@enigma).to be_instance_of (Enigma)
   end
 
+  it 'returns encrypted hash' do
+    expect(@enigma.encrypt("hello world", "02715", "040895")).to eq({
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+      })
+  end
+
 end
