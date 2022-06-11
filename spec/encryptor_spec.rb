@@ -130,16 +130,16 @@ RSpec.describe Encryptor do
   end
 
   it 'returns character offset by specified number' do
-    expect(@encryptor.shift_character("h",3)).to eq("k")
+    expect(@encryptor_with_number_and_date.shift_character("h",3)).to eq("k")
 
-    expect(@encryptor.shift_character("e",27)).to eq("e")
+    expect(@encryptor_with_number_and_date.shift_character("e",27)).to eq("e")
 
-    expect(@encryptor.shift_character("l",73)).to eq("d")
+    expect(@encryptor_with_number_and_date.shift_character("l",73)).to eq("d")
 
-    expect(@encryptor.shift_character("l",20)).to eq("e")
+    expect(@encryptor_with_number_and_date.shift_character("l",20)).to eq("e")
 
-    expect(@encryptor.shift_character("o",3)).to eq("r")
+    expect(@encryptor_with_number_and_date.shift_character("o",3)).to eq("r")
 
-    expect(@encryptor.shift_character(" ",27)).to eq(" ")
+    expect(@encryptor_with_number_and_date.shift_character(" ",27)).to eq(" ")
   end
 end
