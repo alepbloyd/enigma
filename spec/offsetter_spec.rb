@@ -20,4 +20,8 @@ RSpec.describe Offsetter do
     expect(@offsetter.squared_date).to eq(1672401025)
   end
 
+  it 'returns a_offset' do
+    expect(@offsetter.a_offset).to eq(1)
+  end
+
 end
