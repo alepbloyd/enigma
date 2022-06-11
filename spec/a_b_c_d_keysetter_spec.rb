@@ -9,11 +9,15 @@ require "pry"
 RSpec.describe ABCDKeySetter do
 
   before (:each) do
-    @key_setter = ABCDKeySetter('02715')
+    @key_setter = ABCDKeySetter.new('02715')
   end
 
   it 'exists' do
     expect(@key_setter).to be_instance_of(ABCDKeySetter)
+  end
+
+  it 'returns a_key' do
+    expect(@key_setter.a_key).to eq('02')
   end
 
 end
