@@ -54,4 +54,31 @@ class Decryptor
     end
   end
 
+  def input_array
+    @encrypted_message.chars
+  end
+
+  def decrypt
+    return_array = []
+    return_hash = {}
+
+    input_array.each_with_index do |character,index|
+      if (index + 1) % 4 == 0 || (index + 1 == 4)
+        return_array << shift_character(character,@d_shift)
+      elsif (index + 1) % 4 == 3 || (index + 1 == 3)
+        return_array << shift_character(character,@c_shift)
+      elsif (index + 1) % 4 == 2 || (index + 1 == 2)
+        return_array << shift_character(character,@b_shift)
+      elsif (index + 1) % 4 == 1 || (index + 1 == 1)
+        return_array << shift_character(character,@a_shift)
+      end
+    end
+    return_array.join("")
+
+    return_hash[:decryption] = return_array.join("")
+    return_hash[:key] = @key_gen.input
+    return_hash[:date] = @date
+
+    return_hash
+  end
 end
