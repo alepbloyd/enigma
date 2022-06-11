@@ -75,4 +75,14 @@ RSpec.describe Decryptor do
       date: "040895"
       })
   end
+
+  it 'decrypts uppercase characters as lowercase' do
+    @decryptor_example_uppercase = Decryptor.new("kEDEr ohuLW!","02715","040895")
+
+    expect(@decryptor_example_uppercase.decrypt).to eq({
+      decryption: "hello world!",
+      key: "02715",
+      date: "040895"
+      })
+  end
 end
