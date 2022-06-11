@@ -75,6 +75,7 @@ class Encryptor
 
   def encrypt
     return_array = []
+    return_hash = {}
 
     input_array.each_with_index do |character,index|
       if (index + 1) % 4 == 0 || (index + 1 == 4)
@@ -88,6 +89,12 @@ class Encryptor
       end
     end
     return_array.join("")
+
+    return_hash[:encryption] = return_array.join("")
+    return_hash[:key] = @key_gen.input
+    return_hash[:date] = @date
+
+    return_hash
   end
 
 end

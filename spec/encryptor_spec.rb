@@ -171,5 +171,11 @@ RSpec.describe Encryptor do
       key: "02715",
       date: "040895"
       })
+
+    expect(@encryptor_with_password_and_date.encrypt).to eq({
+      encryption: "kfnfrayiumf",
+      key: "SpaghettiBoi",
+      date: "040895"
+      })
   end
 end
