@@ -65,4 +65,14 @@ RSpec.describe Decryptor do
       date: "040895"
       })
     end
+
+  it 'decrypts unincluded characters as themselves' do
+    @decryptor_example_punctuation = Decryptor.new("keder ohulw!","02715","040895")
+
+    expect(@decryptor_example_punctuation.decrypt).to eq({
+      decryption: "hello world!",
+      key: "02715",
+      date: "040895"
+      })
+  end
 end
