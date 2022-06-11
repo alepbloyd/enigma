@@ -55,7 +55,7 @@ class Decryptor
   end
 
   def input_array
-    @encrypted_message.chars
+    @encrypted_message.downcase.chars
   end
 
   def decrypt
@@ -63,7 +63,9 @@ class Decryptor
     return_hash = {}
 
     input_array.each_with_index do |character,index|
-      if (index + 1) % 4 == 0 || (index + 1 == 4)
+      if @character_set.include?(character) == false
+        return_array << character
+      elsif (index + 1) % 4 == 0 || (index + 1 == 4)
         return_array << shift_character(character,@d_shift)
       elsif (index + 1) % 4 == 3 || (index + 1 == 3)
         return_array << shift_character(character,@c_shift)
