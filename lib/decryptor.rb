@@ -44,13 +44,14 @@ class Decryptor
                       "z", " "]
   end
 
-  # def shift_character(start_character,shift_amount)
-  #   index = @character_set.index(start_character)
-  #   return_index = index - shift_amount
-  #   #need way to account for:
-  #   # when it's below 0
-  #   # when between 0 and 27
-  #   # shouldn't ever be above 27
-  # end
+  def shift_character(start_character,shift_amount)
+    index = @character_set.index(start_character)
+    return_index = index - shift_amount
+    if return_index >= 0 && return_index <= 27
+      return @character_set[return_index]
+    elsif return_index < 0
+      @character_set[return_index % 27]
+    end
+  end
 
 end
