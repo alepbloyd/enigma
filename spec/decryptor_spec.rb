@@ -34,4 +34,10 @@ RSpec.describe Decryptor do
     expect(@example_with_password.key).to eq("02816")
   end
 
+  it 'returns encryption date' do
+    expect(@example_decryptor.date).to eq("040895")
+
+    expect(@example_with_password.date).to eq("040895")
+  end
+
 end
