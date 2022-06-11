@@ -6,11 +6,13 @@ require "pry"
 class Offsetter
 
   attr_reader :squared_date,
-              :a_offset
+              :a_offset,
+              :b_offset
 
   def initialize(input)
     @squared_date = input.to_i ** 2
     @a_offset = @squared_date.to_s[-4].to_i
+    @b_offset = @squared_date.to_s[-3].to_i
   end
 
 
