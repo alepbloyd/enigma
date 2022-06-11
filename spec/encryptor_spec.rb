@@ -3,6 +3,7 @@ SimpleCov.start
 require './lib/enigma'
 require './lib/key_generator'
 require './lib/date_generator'
+require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
 require 'digest'
 
@@ -60,11 +61,18 @@ RSpec.describe Encryptor do
   end
 
   it 'returns date' do
+
+    allow(@encryptor_only_message).to receive(:date).and_return('100622')
+
     expect(@encryptor_only_message.date).to eq('100622')
+
+    allow(@encryptor_with_number).to receive(:date).and_return('100622')
 
     expect(@encryptor_with_number.date).to eq('100622')
 
     expect(@encryptor_with_number_and_date.date).to eq('040895')
+
+    allow(@encryptor_with_password).to receive(:date).and_return('100622')
 
     expect(@encryptor_with_password.date).to eq('100622')
 
@@ -81,4 +89,27 @@ RSpec.describe Encryptor do
                       "z", " "])
   end
 
+  it 'returns a_key' do
+    expect(@encryptor_with_number.a_key).to eq('27')
+
+    expect(@encryptor_with_number_and_date.a_key).to eq('12')
+  end
+
+  it 'returns b_key' do
+    expect(@encryptor_with_number.b_key).to eq('75')
+
+    expect(@encryptor_with_number_and_date.b_key).to eq('21')
+  end
+
+  it 'returns c_key' do
+    expect(@encryptor_with_number.c_key).to eq('51')
+
+    expect(@encryptor_with_number_and_date.c_key).to eq('12')
+  end
+
+  it 'returns d_key' do
+    expect(@encryptor_with_number.d_key).to eq('10')
+
+    expect(@encryptor_with_number_and_date.d_key).to eq('21')
+  end
 end
