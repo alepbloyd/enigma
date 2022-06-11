@@ -178,4 +178,15 @@ RSpec.describe Encryptor do
       date: "040895"
       })
   end
+
+  it 'encrypts unincluded characters as themselves' do
+    @encryptor_example_punctuation = Encryptor.new("hello world!", "02715", "040895")
+
+    expect(@encryptor_example_punctuation.encrypt).to eq({
+      encryption: "keder ohulw!",
+      key: "02715",
+      date: "040895"
+      })
+  end
+
 end
