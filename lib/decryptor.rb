@@ -8,7 +8,8 @@ require 'digest'
 class Decryptor
 
   attr_reader :encrypted_message,
-              :key
+              :key,
+              :date
 
   def initialize(encrypted_message,key,date)
     @encrypted_message = encrypted_message
@@ -16,6 +17,7 @@ class Decryptor
     @key_gen = KeyGenerator.new(key)
     @key = @key_gen.code_key
 
+    @date = date
   end
 
 end
