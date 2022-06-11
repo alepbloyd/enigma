@@ -71,4 +71,14 @@ RSpec.describe Encryptor do
     expect(@encryptor_with_password_and_date.date).to eq('040895')
   end
 
+  it 'returns character_set' do
+    expect(@encryptor_only_message.character_set).to eq(
+                      ["a", "b", "c", "d", "e",
+                      "f", "g", "h", "i", "j",
+                      "k", "l", "m", "n", "o",
+                      "p", "q", "r", "s", "t",
+                      "u", "v", "w", "x", "y",
+                      "z", " "])
+  end
+
 end
