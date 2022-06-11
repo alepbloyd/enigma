@@ -165,7 +165,11 @@ RSpec.describe Encryptor do
     expect(@encryptor_with_number_and_date.input_array).to eq(['h','e','l','l','o',' ','w','o','r','l','d'])
   end
 
-  it 'encrypts message based on key and date' do
-    expect(@encryptor_example.encrypt).to eq("keder ohulw")
+  it 'returns hash of encryption, key, and date' do
+    expect(@encryptor_example.encrypt).to eq({
+      encryption: "keder ohulw",
+      key: "02715",
+      date: "040895"
+      })
   end
 end
