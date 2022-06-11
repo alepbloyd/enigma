@@ -22,6 +22,7 @@ class Encryptor
               :a_shift,
               :b_shift,
               :c_shift,
+              :d_shift,
               :character_set
 
   def initialize(input_message,code_key = nil,date = nil)
@@ -48,6 +49,7 @@ class Encryptor
     @a_shift = @a_key.to_i + @a_offset.to_i
     @b_shift = @b_key.to_i + @b_offset.to_i
     @c_shift = @c_key.to_i + @c_offset.to_i
+    @d_shift = @d_key.to_i + @d_offset.to_i
 
     @character_set = ["a", "b", "c", "d", "e",
                       "f", "g", "h", "i", "j",
