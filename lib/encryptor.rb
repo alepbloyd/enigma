@@ -69,4 +69,8 @@ class Encryptor
     end
   end
 
+  def input_array
+    @input_message.chars
+  end
+
 end
