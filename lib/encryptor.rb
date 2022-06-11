@@ -17,6 +17,7 @@ class Encryptor
               :d_key,
               :a_offset,
               :b_offset,
+              :c_offset,
               :character_set
 
   def initialize(input_message,code_key = nil,date = nil)
@@ -37,6 +38,7 @@ class Encryptor
     @offsetter = Offsetter.new(@date)
     @a_offset = @offsetter.a_offset
     @b_offset = @offsetter.b_offset
+    @c_offset = @offsetter.c_offset
 
     @character_set = ["a", "b", "c", "d", "e",
                       "f", "g", "h", "i", "j",
