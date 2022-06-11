@@ -18,6 +18,39 @@ class Decryptor
     @key = @key_gen.code_key
 
     @date = date
+
+    @abcd_gen = ABCDKeySetter.new(@key)
+    @a_key = @abcd_gen.a_key
+    @b_key = @abcd_gen.b_key
+    @c_key = @abcd_gen.c_key
+    @d_key = @abcd_gen.d_key
+
+    @offsetter = Offsetter.new(@date)
+    @a_offset = @offsetter.a_offset
+    @b_offset = @offsetter.b_offset
+    @c_offset = @offsetter.c_offset
+    @d_offset = @offsetter.d_offset
+
+    @a_shift = @a_key.to_i + @a_offset.to_i
+    @b_shift = @b_key.to_i + @b_offset.to_i
+    @c_shift = @c_key.to_i + @c_offset.to_i
+    @d_shift = @d_key.to_i + @d_offset.to_i
+
+    @character_set = ["a", "b", "c", "d", "e",
+                      "f", "g", "h", "i", "j",
+                      "k", "l", "m", "n", "o",
+                      "p", "q", "r", "s", "t",
+                      "u", "v", "w", "x", "y",
+                      "z", " "]
   end
+
+  # def shift_character(start_character,shift_amount)
+  #   index = @character_set.index(start_character)
+  #   return_index = index - shift_amount
+  #   #need way to account for:
+  #   # when it's below 0
+  #   # when between 0 and 27
+  #   # shouldn't ever be above 27
+  # end
 
 end
