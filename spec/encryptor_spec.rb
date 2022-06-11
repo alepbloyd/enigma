@@ -112,4 +112,9 @@ RSpec.describe Encryptor do
 
     expect(@encryptor_with_number_and_date.d_key).to eq('21')
   end
+
+  it 'returns a_offset' do
+    expect(@encryptor_with_number_and_date.a_offset).to eq(1)
+  end
+
 end
