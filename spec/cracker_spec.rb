@@ -47,6 +47,10 @@ RSpec.describe Cracker do
     expect(@cracker.c_offset).to eq(2)
   end
 
+  it 'returns d_offset' do
+    expect(@cracker.d_offset).to eq(4)
+  end
+
   it 'returns a,b,c,d position for final character' do
     expect(@cracker.final_character_position).to eq("c")
   end
