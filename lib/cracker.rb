@@ -54,7 +54,11 @@ class Cracker
   end
 
   def final_char_diff
-    final_char_index - 3
+    (final_char_index - 3).abs
+  end
+
+  def second_last_char_diff
+    (second_last_char_index - 13).abs
   end
 
   def final_character_position
