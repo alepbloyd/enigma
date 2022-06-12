@@ -37,6 +37,10 @@ class Cracker
                       "z", " "]
   end
 
+  def final_char_index
+    @character_set.index(@input_string[-1])
+  end
+
   def final_character_position
     if @length % 4 == 0
       "d"
