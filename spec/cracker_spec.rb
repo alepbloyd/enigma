@@ -63,6 +63,10 @@ RSpec.describe Cracker do
     expect(@cracker.final_four_pattern).to eq(['d','a','b','c'])
   end
 
+  it 'returns index of final character' do
+    expect(@cracker.final_char_index).to eq(8)
+  end
+
   xit 'determines difference between last character and "d"' do
 
   end
