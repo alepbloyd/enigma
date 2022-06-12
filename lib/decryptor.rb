@@ -51,10 +51,10 @@ class Decryptor
     elsif return_index < 0
       @character_set[return_index % 27]
     end
-  end
+  end # this must be busted
 
   def input_array
-    @encrypted_message.chars
+    @encrypted_message.downcase.chars
   end
 
   def decrypt
@@ -62,7 +62,9 @@ class Decryptor
     return_hash = {}
 
     input_array.each_with_index do |character,index|
-      if (index + 1) % 4 == 0 || (index + 1 == 4)
+      if @character_set.include?(character) == false
+        return_array << character
+      elsif (index + 1) % 4 == 0 || (index + 1 == 4)
         return_array << shift_character(character,@d_shift)
       elsif (index + 1) % 4 == 3 || (index + 1 == 3)
         return_array << shift_character(character,@c_shift)
@@ -71,6 +73,8 @@ class Decryptor
       elsif (index + 1) % 4 == 1 || (index + 1 == 1)
         return_array << shift_character(character,@a_shift)
       end
+
+      # binding.pry
     end
     return_array.join("")
 

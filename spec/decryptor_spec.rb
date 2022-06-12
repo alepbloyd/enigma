@@ -7,6 +7,7 @@ require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
 require './lib/decryptor'
 require 'digest'
+require 'pry'
 
 RSpec.describe Decryptor do
 

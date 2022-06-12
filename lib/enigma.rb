@@ -16,12 +16,16 @@ class Enigma
     encryptor = Encryptor.new(input,code_key,date)
 
     encryptor.encrypt
+
+    #put all the output things in this class, not the runner
   end
 
   def decrypt(input,code_key,date= nil)
     decryptor = Decryptor.new(input,code_key,date)
 
     decryptor.decrypt
+
+    #put all the output things in this class, not the runner
   end
 
 end
