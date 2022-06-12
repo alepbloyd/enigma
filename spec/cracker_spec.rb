@@ -35,6 +35,10 @@ RSpec.describe Cracker do
     expect(@cracker.length).to eq(15)
   end
 
+  it 'initializes with character_set' do
+    expect(@cracker.character_set).to eq(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "])
+  end
+
   it 'returns a_offset' do
     expect(@cracker.a_offset).to eq(6)
   end
@@ -57,6 +61,22 @@ RSpec.describe Cracker do
 
   it 'returns a,b,c,d pattern for final four characters' do
     expect(@cracker.final_four_pattern).to eq(['d','a','b','c'])
+  end
+
+  xit 'determines difference between last character and "d"' do
+
+  end
+
+  xit 'determines difference between 2nd to last character and "n"' do
+
+  end
+
+  xit 'determines difference between 3rd to last character and "e"' do
+
+  end
+
+  xit 'determines differe between 4th to last character and " " (space)' do
+
   end
 
 end

@@ -15,7 +15,8 @@ class Cracker
               :a_offset,
               :b_offset,
               :c_offset,
-              :d_offset
+              :d_offset,
+              :character_set
 
   def initialize(input_string,date)
     @input_string = input_string
@@ -27,6 +28,13 @@ class Cracker
     @b_offset = @offsetter.b_offset
     @c_offset = @offsetter.c_offset
     @d_offset = @offsetter.d_offset
+
+    @character_set = ["a", "b", "c", "d", "e",
+                      "f", "g", "h", "i", "j",
+                      "k", "l", "m", "n", "o",
+                      "p", "q", "r", "s", "t",
+                      "u", "v", "w", "x", "y",
+                      "z", " "]
   end
 
   def final_character_position
