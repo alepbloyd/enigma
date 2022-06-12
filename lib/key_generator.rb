@@ -7,7 +7,6 @@ class KeyGenerator
 
   def initialize(input = nil)
     @input = input
-    @input_hash = Digest::SHA1.base64digest(input.to_s)
   end
 
   def input_five_digit_string?
@@ -35,14 +34,15 @@ class KeyGenerator
   def generate_random_five_digit_key
     return_string = ""
     5.times {return_string += random_digit.to_s}
+    return_string
   end
 
   def hash_base64
-    @input_hash = Digest::SHA1.base64digest(@input)
+    Digest::SHA1.base64digest(@input)
   end
 
   def input_hash_first_5
-    @input_hash[0,5]
+    hash_base64[0,5]
   end
 
   def ord_numbers_for_first_five
