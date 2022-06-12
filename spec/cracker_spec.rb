@@ -27,4 +27,8 @@ RSpec.describe Cracker do
     expect(@cracker.input_string).to eq("vjqtbeaweqihssi")
   end
 
+  it 'returns input date' do
+    expect(@cracker.date).to eq("291018")
+  end
+
 end
