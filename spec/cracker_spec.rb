@@ -31,4 +31,8 @@ RSpec.describe Cracker do
     expect(@cracker.date).to eq("291018")
   end
 
+  it 'returns length of input_string' do
+    expect(@cracker.length).to eq(15)
+  end
+
 end
