@@ -71,6 +71,10 @@ RSpec.describe Cracker do
     expect(@cracker.second_last_char_index).to eq(18)
   end
 
+  it 'returns index of 3rd to last char' do
+    expect(@cracker.third_last_char_index).to eq(18)
+  end
+
   xit 'determines difference between last character and "d"' do
 
   end
