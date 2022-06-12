@@ -53,6 +53,10 @@ class Cracker
     @character_set.index(@input_string[-4])
   end
 
+  def final_char_diff
+    final_char_index - 3
+  end
+
   def final_character_position
     if @length % 4 == 0
       "d"
