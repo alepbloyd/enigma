@@ -1,9 +1,8 @@
-require 'key_generator'
-require 'date_generator'
-require 'a_b_c_d_keysetter'
-require 'offsetter'
-require 'enigma'
 require 'digest'
+require './lib/key_generator'
+require './lib/date_generator'
+require './lib/a_b_c_d_keysetter'
+require './lib/offsetter'
 
 class Encryptor
 

@@ -1,9 +1,3 @@
-require './lib/enigma'
-require './lib/key_generator'
-require './lib/date_generator'
-require './lib/a_b_c_d_keysetter'
-require 'pry'
-
 class ABCDKeySetter
 
   attr_reader :a_key,

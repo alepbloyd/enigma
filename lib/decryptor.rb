@@ -1,9 +1,8 @@
-require 'key_generator'
-require 'date_generator'
-require 'a_b_c_d_keysetter'
-require 'offsetter'
-require 'enigma'
 require 'digest'
+require './lib/key_generator'
+require './lib/date_generator'
+require './lib/a_b_c_d_keysetter'
+require './lib/offsetter'
 
 class Decryptor
 
@@ -52,7 +51,7 @@ class Decryptor
     elsif return_index < 0
       @character_set[return_index % 27]
     end
-  end
+  end # this must be busted
 
   def input_array
     @encrypted_message.downcase.chars
@@ -74,6 +73,8 @@ class Decryptor
       elsif (index + 1) % 4 == 1 || (index + 1 == 1)
         return_array << shift_character(character,@a_shift)
       end
+
+      # binding.pry
     end
     return_array.join("")
 

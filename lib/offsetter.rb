@@ -1,7 +1,11 @@
-require './lib/enigma'
-require './lib/key_generator'
-require './lib/date_generator'
-require "pry"
+require 'digest'
+require_relative 'enigma'
+require_relative 'key_generator'
+require_relative 'date_generator'
+require_relative 'encryptor'
+require_relative 'decryptor'
+require_relative 'a_b_c_d_keysetter'
+require_relative 'offsetter'
 
 class Offsetter
 

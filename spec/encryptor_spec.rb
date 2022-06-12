@@ -6,6 +6,7 @@ require './lib/date_generator'
 require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
 require 'digest'
+require 'pry'
 
 RSpec.describe Encryptor do
 

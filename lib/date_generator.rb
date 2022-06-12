@@ -1,8 +1,3 @@
-require 'key_generator'
-require 'enigma'
-require 'digest'
-require 'date'
-
 class DateGenerator
 
   attr_reader :date

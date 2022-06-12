@@ -47,7 +47,9 @@ RSpec.describe KeyGenerator do
   end
 
   it 'generates random five digit string' do
-    expect(@key_generator3.generate_random_five_digit_key).to eq(5)
+    allow(@key_generator3).to receive(:generate_random_five_digit_key).and_return('86753')
+    
+    expect(@key_generator3.generate_random_five_digit_key).to eq("86753")
   end
 
   it 'checks if input is a five digit string' do
