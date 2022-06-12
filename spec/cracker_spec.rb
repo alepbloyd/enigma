@@ -39,4 +39,8 @@ RSpec.describe Cracker do
     expect(@cracker.final_character_position).to eq("c")
   end
 
+  it 'returns a,b,c,d pattern for final four characters' do
+    expect(@cracker.final_four_pattern).to eq(['d','a','b','c'])
+  end
+
 end
