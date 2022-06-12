@@ -19,4 +19,15 @@ class Cracker
     @length = input_string.length
   end
 
+  def final_character_position
+    if @length % 4 == 0
+      "d"
+    elsif @length % 3 == 0
+      "c"
+    elsif @length % 2 == 0
+      "b"
+    elsif @length % 1 == 0
+      "a"
+    end
+  end
 end
