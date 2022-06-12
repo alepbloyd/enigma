@@ -23,4 +23,8 @@ RSpec.describe Cracker do
     expect(@cracker).to be_instance_of(Cracker)
   end
 
+  it 'returns input string' do
+    expect(@cracker.input_string).to eq("vjqtbeaweqihssi")
+  end
+
 end
