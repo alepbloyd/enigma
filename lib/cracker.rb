@@ -30,4 +30,18 @@ class Cracker
       "a"
     end
   end
+
+  def final_four_pattern
+    if final_character_position == "d"
+      ['a','b','c','d']
+    elsif final_character_position == "c"
+      ['d','a','b','c']
+    elsif final_character_position == "b"
+      ['c','d','a','b']
+    elsif final_character_position == "a"
+      ['b','c','d','a']
+    end
+  end
+
+
 end
