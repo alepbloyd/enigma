@@ -49,6 +49,10 @@ class Cracker
     @character_set.index(@input_string[-3])
   end
 
+  def fourth_last_char_index
+    @character_set.index(@input_string[-4])
+  end
+
   def final_character_position
     if @length % 4 == 0
       "d"
