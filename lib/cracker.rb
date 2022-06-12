@@ -11,12 +11,22 @@ class Cracker
 
   attr_reader :input_string,
               :date,
-              :length
+              :length,
+              :a_offset,
+              :b_offset,
+              :c_offset,
+              :d_offset
 
   def initialize(input_string,date)
     @input_string = input_string
     @date = date
     @length = input_string.length
+
+    @offsetter = Offsetter.new(@date)
+    @a_offset = @offsetter.a_offset
+    @b_offset = @offsetter.b_offset
+    @c_offset = @offsetter.c_offset
+    @d_offset = @offsetter.d_offset
   end
 
   def final_character_position
