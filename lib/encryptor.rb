@@ -69,7 +69,7 @@ class Encryptor
   end
 
   def input_array
-    @input_message.chars
+    @input_message.downcase.chars
   end
 
   def encrypt
