@@ -87,12 +87,12 @@ RSpec.describe Cracker do
     expect(@cracker.second_last_char_diff).to eq(5)
   end
 
-  xit 'determines difference between 3rd to last character and "e"' do
-
+  it 'determines difference between 3rd to last character and "e"' do
+    expect(@cracker.third_last_char_diff).to eq(14)
   end
 
-  xit 'determines differe between 4th to last character and " " (space)' do
-
+  it 'determines differe between 4th to last character and " " (space)' do
+    expect(@cracker.fourth_last_char_diff).to eq(19)
   end
 
 end

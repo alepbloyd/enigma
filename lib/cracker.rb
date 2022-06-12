@@ -54,11 +54,19 @@ class Cracker
   end
 
   def final_char_diff
-    (final_char_index - 3).abs
+    (final_char_index - @character_set.index("d")).abs
   end
 
   def second_last_char_diff
-    (second_last_char_index - 13).abs
+    (second_last_char_index - @character_set.index("n")).abs
+  end
+
+  def third_last_char_diff
+    (second_last_char_index - @character_set.index("e")).abs
+  end
+
+  def fourth_last_char_diff
+    (fourth_last_char_index - @character_set.index(" ")).abs
   end
 
   def final_character_position
