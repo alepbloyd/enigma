@@ -10,11 +10,13 @@ require 'pry'
 class Cracker
 
   attr_reader :input_string,
-              :date
+              :date,
+              :length
 
   def initialize(input_string,date)
     @input_string = input_string
     @date = date
+    @length = input_string.length
   end
 
 end
