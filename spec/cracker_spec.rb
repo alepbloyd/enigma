@@ -6,6 +6,7 @@ require './lib/date_generator'
 require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
 require './lib/decryptor'
+require './lib/cracker'
 require 'digest'
 require 'pry'
 
@@ -19,7 +20,7 @@ RSpec.describe Cracker do
   end
 
   it 'exists' do
-    expect(@cracker).to be_instanceof(Cracker)
+    expect(@cracker).to be_instance_of(Cracker)
   end
 
 end
