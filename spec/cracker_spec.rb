@@ -35,4 +35,8 @@ RSpec.describe Cracker do
     expect(@cracker.length).to eq(15)
   end
 
+  it 'returns a,b,c,d position for final character' do
+    expect(@cracker.final_character_position).to eq("c")
+  end
+
 end
