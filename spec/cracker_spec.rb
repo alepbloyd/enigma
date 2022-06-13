@@ -97,14 +97,20 @@ RSpec.describe Cracker do
   end
 
   it 'returns a_key' do
-    expect(@cracker.a_key).to eq("08")
+    expect(@cracker.a_key_initial).to eq("08")
+  end
+
+  it 'returns array of options between 0 and 100 for a_key' do
+    expect(@cracker.a_key_options).to eq(["08","35","62","89"])
   end
 
   xit 'returns b_key' do
+    #need some way to address that this reduces down to "02"
     expect(@cracker.b_key).to eq("83")
   end
 
   xit 'returns c_key' do
+    #need some way to address that this reduces down to "03"
     expect(@cracker.c_key).to eq("30")
   end
 
