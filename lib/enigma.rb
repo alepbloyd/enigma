@@ -4,9 +4,7 @@ require './lib/key_generator'
 require './lib/encryptor'
 require './lib/decryptor'
 require './lib/brute_force_cracker'
-require './modules/ABCDKeyable'
-require './modules/offsettable'
-require './modules/shiftable'
+require './lib/modules/shiftable'
 
 class Enigma
 

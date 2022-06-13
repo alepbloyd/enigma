@@ -4,13 +4,13 @@ require './lib/enigma'
 @input_file = File.open(ARGV[0],"r")
 @output_file = File.open(ARGV[1],"w")
 
+@input_text = @input_file.read
+
 @date = ARGV[2]
 
-@key = @enigma.crack(@input_file.read,@date)
+@key = @enigma.crack(@input_text,@date)
 
-binding.pry
-
-@output_hash = @enigma.decrypt(@input_file.read,@key,@date)
+@output_hash = @enigma.decrypt(@input_text,@key,@date)
 
 @output_file.write(@output_hash[:decryption])
 
