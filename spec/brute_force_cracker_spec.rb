@@ -32,4 +32,18 @@ RSpec.describe BruteForceCracker do
     expect(@brute_force_cracker.date).to eq("291018")
   end
 
+  it 'initiazes with strings "00000" through "99999" in array' do
+    expect(@brute_force_cracker.potential_keys).to be_instance_of(Array)
+    expect(@brute_force_cracker.potential_keys.length).to eq(100_000)
+  end
+
+
+  xit 'returns last four characters of output' do
+
+  end
+
+  xit 'verifies if last four characters equal " end"' do
+
+  end
+
 end
