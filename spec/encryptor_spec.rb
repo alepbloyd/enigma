@@ -2,9 +2,8 @@ require 'simplecov'
 SimpleCov.start
 require './lib/enigma'
 require './lib/key_generator'
-require './lib/date_generator'
-require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
+require './lib/modules/shiftable'
 require 'digest'
 require 'pry'
 
@@ -92,46 +91,6 @@ RSpec.describe Encryptor do
                       "z", " "])
   end
 
-  it 'returns a_key' do
-    expect(@encryptor_with_number.a_key).to eq('27')
-
-    expect(@encryptor_with_number_and_date.a_key).to eq('12')
-  end
-
-  it 'returns b_key' do
-    expect(@encryptor_with_number.b_key).to eq('75')
-
-    expect(@encryptor_with_number_and_date.b_key).to eq('21')
-  end
-
-  it 'returns c_key' do
-    expect(@encryptor_with_number.c_key).to eq('51')
-
-    expect(@encryptor_with_number_and_date.c_key).to eq('12')
-  end
-
-  it 'returns d_key' do
-    expect(@encryptor_with_number.d_key).to eq('10')
-
-    expect(@encryptor_with_number_and_date.d_key).to eq('21')
-  end
-
-  it 'returns a_offset' do
-    expect(@encryptor_with_number_and_date.a_offset).to eq(1)
-  end
-
-  it 'returns b_offset' do
-    expect(@encryptor_with_number_and_date.b_offset).to eq(0)
-  end
-
-  it 'returns c_offset' do
-    expect(@encryptor_with_number_and_date.c_offset).to eq(2)
-  end
-
-  it 'returns d_offset' do
-    expect(@encryptor_with_number_and_date.d_offset).to eq(5)
-  end
-
   it 'returns character offset by specified number' do
     expect(@encryptor_with_number_and_date.shift_character("h",3)).to eq("k")
 
@@ -147,19 +106,19 @@ RSpec.describe Encryptor do
   end
 
   it 'returns total a_shift' do
-    expect(@encryptor_with_number_and_date.a_shift).to eq(13)
+    expect(@encryptor_with_number_and_date.a_shift_total).to eq(13)
   end
 
   it 'returns total b_shift' do
-    expect(@encryptor_with_number_and_date.b_shift).to eq(21)
+    expect(@encryptor_with_number_and_date.b_shift_total).to eq(21)
   end
 
   it 'returns total c_shift' do
-    expect(@encryptor_with_number_and_date.c_shift).to eq(14)
+    expect(@encryptor_with_number_and_date.c_shift_total).to eq(14)
   end
 
   it 'returns total d_shift' do
-    expect(@encryptor_with_number_and_date.d_shift).to eq(26)
+    expect(@encryptor_with_number_and_date.d_shift_total).to eq(26)
   end
 
   it 'returns input message as array' do

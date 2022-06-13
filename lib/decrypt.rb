@@ -1,5 +1,4 @@
 require './lib/enigma'
-require 'pry'
 
 @enigma = Enigma.new
 @key_gen = KeyGenerator.new(ARGV[2])
@@ -14,4 +13,4 @@ require 'pry'
 
 @output_file.write(@output_hash[:decryption])
 
-puts "Created '#{@output_file}' with the key '#{ARGV[2] || @code_key}' and the date '#{@date}'"
+puts "Created '#{ARGV[1]}' with the key '#{ARGV[2] || @code_key}' and the date '#{@date}'"
