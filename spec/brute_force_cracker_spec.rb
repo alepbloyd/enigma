@@ -6,7 +6,6 @@ require './lib/date_generator'
 require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
 require './lib/decryptor'
-require './lib/cracker'
 require './lib/brute_force_cracker'
 require 'digest'
 require 'pry'
@@ -38,12 +37,18 @@ RSpec.describe BruteForceCracker do
   end
 
 
-  xit 'returns last four characters of output' do
-
+  it 'returns last four characters of attempt output' do
+    expect(@brute_force_cracker.attempt_crack("00000")).to eq("dmpg")
   end
 
-  xit 'verifies if last four characters equal " end"' do
+  it 'verifies if last four characters equal " end"' do
+    expect(@brute_force_cracker.check_attempt(" end")).to be true
 
+    expect(@brute_force_cracker.check_attempt("hamb")).to be false
+  end
+
+  it 'returns crack key' do
+    expect(@brute_force_cracker.crack).to eq("08304")
   end
 
 end

@@ -28,6 +28,23 @@ class BruteForceCracker
 
   def attempt_crack(key)
     attempt = Decryptor.new(@input_string,key,@date)
+
+    last_four_chars = attempt.decrypt[:decryption][-4,4]
+  end
+
+  def check_attempt(last_four_chars)
+    last_four_chars == " end"
+  end
+
+  def crack
+    return_key = ""
+    @potential_keys.each do |key|
+      last_four_chars = attempt_crack(key)
+      if check_attempt(last_four_chars)
+        return_key = key
+      end
+    end
+    return_key
   end
 
 end
