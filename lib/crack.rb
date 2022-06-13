@@ -1,5 +1,7 @@
 require './lib/enigma'
 
+puts "Please hold."
+
 @enigma = Enigma.new
 @input_file = File.open(ARGV[0],"r")
 @output_file = File.open(ARGV[1],"w")
