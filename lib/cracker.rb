@@ -69,7 +69,7 @@ class Cracker
     (fourth_last_char_index - @character_set.index(" ")).abs
   end
 
-  def a_key
+  def a_key_initial
     if final_four_pattern.index('a') + 1 == 1
       "%02d" % (fourth_last_char_diff - @a_offset).to_i
     elsif final_four_pattern.index('a') + 1 == 2
@@ -78,6 +78,28 @@ class Cracker
       "%02d" % (second_last_char_diff - @a_offset).to_i
     elsif final_four_pattern.index('a') + 1 == 4
       "%02d" % (final_char_diff - @a_offset).to_i
+    end
+  end
+
+  def a_key_options
+    return_array = [a_key_initial]
+    i = a_key_initial.to_i
+    until i > 73 do
+      i += 27
+      return_array << ("%02d" % i)
+    end
+    return_array
+  end
+
+  def b_key
+    if final_four_pattern.index('b') + 1 == 1
+      "%02d" % (fourth_last_char_diff - @b_offset).to_i
+    elsif final_four_pattern.index('b') + 1 == 2
+      "%02d" % (third_last_char_diff - @a_offset).to_i
+    elsif final_four_pattern.index('b') + 1 == 3
+      "%02d" % (second_last_char_diff - @b_offset).to_i
+    elsif final_four_pattern.index('b') + 1 == 4
+      "%02d" % (final_char_diff - @b_offset).to_i
     end
   end
 
