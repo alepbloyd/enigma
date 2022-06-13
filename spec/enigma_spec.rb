@@ -30,4 +30,8 @@ RSpec.describe Enigma do
       })
   end
 
+  it 'returns key for crack' do
+    expect(@enigma.crack("vjqtbeaweqihssi", "291018")).to eq("08304")
+  end
+
 end
