@@ -34,6 +34,12 @@ RSpec.describe KeyGenerator do
     expect(@key_generator2.ord_numbers_for_first_five).to eq([113,56,52,107,52])
   end
 
+  it 'generates a random digit' do
+    allow(@key_generator).to receive(:random_digit).and_return(5)
+    
+    expect(@key_generator.random_digit).to eq(5)
+  end
+
   it 'sums first five ord numbers joined' do
     expect(@key_generator2.first_five_ord_numbers_joined).to eq(113565210752)
   end
@@ -48,7 +54,7 @@ RSpec.describe KeyGenerator do
 
   it 'generates random five digit string' do
     allow(@key_generator3).to receive(:generate_random_five_digit_key).and_return('86753')
-    
+
     expect(@key_generator3.generate_random_five_digit_key).to eq("86753")
   end
 
