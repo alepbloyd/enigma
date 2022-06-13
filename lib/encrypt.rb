@@ -13,4 +13,4 @@ require './lib/enigma'
 
 @output_file.write(@output_hash[:encryption])
 
-puts "Created #{@output_file} with the key '#{ARGV[2] || @code_key}' and the date '#{@output_hash[:date]}'"
+puts "Created #{ARGV[1]} with the key '#{ARGV[2] || @code_key}' and the date '#{@output_hash[:date]}'"

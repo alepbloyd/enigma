@@ -2,11 +2,8 @@ require 'simplecov'
 SimpleCov.start
 require './lib/enigma'
 require './lib/key_generator'
-require './lib/date_generator'
 require './lib/encryptor'
-require './lib/ABCDKeyable'
-require './lib/offsettable'
-require './lib/shiftable'
+require './lib/modules/shiftable'
 require 'digest'
 require 'pry'
 

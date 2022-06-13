@@ -1,9 +1,8 @@
 require './lib/enigma'
 require './lib/key_generator'
-require './lib/date_generator'
-require './lib/a_b_c_d_keysetter'
 require './lib/encryptor'
 require './lib/decryptor'
+require './lib/modules/shiftable'
 require 'digest'
 require 'pry'
 

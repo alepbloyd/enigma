@@ -1,7 +1,6 @@
 require 'digest'
 require './lib/key_generator'
-require './lib/date_generator'
-require './lib/shiftable'
+require './lib/modules/shiftable'
 
 class Decryptor
   include Shiftable
@@ -10,7 +9,7 @@ class Decryptor
               :code_key,
               :date
 
-  def initialize(encrypted_message,key,date)
+  def initialize(encrypted_message,key,date = Date.today.strftime("%e%m%y").to_s)
     @encrypted_message = encrypted_message
 
     @key_gen = KeyGenerator.new(key)

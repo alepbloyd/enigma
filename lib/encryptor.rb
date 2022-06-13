@@ -1,7 +1,6 @@
 require 'digest'
 require './lib/key_generator'
-require './lib/date_generator'
-require './lib/shiftable'
+require './lib/modules/shiftable'
 
 class Encryptor
   include Shiftable
@@ -11,14 +10,13 @@ class Encryptor
               :date,
               :character_set
 
-  def initialize(input_message,code_key = nil,date = nil)
+  def initialize(input_message,code_key = nil, date = Date.today.strftime("%e%m%y").to_s)
     @input_message = input_message
 
     @key_gen = KeyGenerator.new(code_key)
     @code_key = @key_gen.code_key
 
-    @date_gen = DateGenerator.new(date)
-    @date = @date_gen.date
+    @date = date
 
     @character_set = ["a", "b", "c", "d", "e",
                       "f", "g", "h", "i", "j",

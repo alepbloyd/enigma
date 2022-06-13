@@ -2,7 +2,6 @@ require 'simplecov'
 SimpleCov.start
 require './lib/enigma'
 require './lib/key_generator'
-require './lib/date_generator'
 require './lib/offsetter'
 require "pry"
 
