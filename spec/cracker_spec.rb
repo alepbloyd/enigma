@@ -53,6 +53,7 @@ RSpec.describe Cracker do
 
   it 'returns d_offset' do
     expect(@cracker.d_offset).to eq(4)
+    #is it this?
   end
 
   it 'returns a,b,c,d position for final character' do
@@ -91,8 +92,32 @@ RSpec.describe Cracker do
     expect(@cracker.third_last_char_diff).to eq(14)
   end
 
-  it 'determines differe between 4th to last character and " " (space)' do
+  it 'determines difference between 4th to last character and " " (space)' do
     expect(@cracker.fourth_last_char_diff).to eq(19)
   end
+
+  it 'returns a_key' do
+    expect(@cracker.a_key).to eq("08")
+  end
+
+  xit 'returns b_key' do
+    expect(@cracker.b_key).to eq("83")
+  end
+
+  xit 'returns c_key' do
+    expect(@cracker.c_key).to eq("30")
+  end
+
+  xit 'returns d_key' do
+    expect(@cracker.a_key).to eq("04")
+  end
+
+  xit 'returns complete key' do
+    expect(@cracker.key).to eq("08304")
+  end
+
+  # now need to remove offset from the difference, and I should have something I can reassemble into the key
+
+  #if getting 'reduced key', like 83 -> 2, add 27 until first digit of next key matches last digit of previous key
 
 end

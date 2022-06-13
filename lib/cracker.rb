@@ -62,11 +62,23 @@ class Cracker
   end
 
   def third_last_char_diff
-    (second_last_char_index - @character_set.index("e")).abs
+    (third_last_char_index - @character_set.index("e")).abs
   end
 
   def fourth_last_char_diff
     (fourth_last_char_index - @character_set.index(" ")).abs
+  end
+
+  def a_key
+    if final_four_pattern.index('a') + 1 == 1
+      "%02d" % (fourth_last_char_diff - @a_offset).to_i
+    elsif final_four_pattern.index('a') + 1 == 2
+      "%02d" % (third_last_char_diff - @a_offset).to_i
+    elsif final_four_pattern.index('a') + 1 == 3
+      "%02d" % (second_last_char_diff - @a_offset).to_i
+    elsif final_four_pattern.index('a') + 1 == 4
+      "%02d" % (final_char_diff - @a_offset).to_i
+    end
   end
 
   def final_character_position
