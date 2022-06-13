@@ -3,7 +3,9 @@ SimpleCov.start
 require './lib/enigma'
 require './lib/key_generator'
 require './lib/date_generator'
-require './lib/a_b_c_d_keysetter'
+require './lib/ABCDKeyable'
+require './lib/offsettable'
+require './lib/shiftable'
 require './lib/encryptor'
 require './lib/decryptor'
 require 'digest'
@@ -30,9 +32,9 @@ RSpec.describe Decryptor do
   end
 
   it 'returns five digit key' do
-    expect(@example_decryptor.key).to eq("02715")
+    expect(@example_decryptor.code_key).to eq("02715")
 
-    expect(@example_with_password.key).to eq("02816")
+    expect(@example_with_password.code_key).to eq("02816")
   end
 
   it 'returns encryption date' do
