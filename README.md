@@ -35,7 +35,7 @@ $ ruby ./lib/decrypt.rb encrypted.txt message.txt key date(optional)
 To crack a key from the command line, run ```$ ruby ./lib/crack.rb```, followed by the input file, the output location, and the date (or leave blank to crack with today's date) - like so:
 
 ```
-$ ruby ./lib/crack.rb message.txt encrypted.txt date(optional)
+$ ruby ./lib/crack.rb encrypted_text.txt output_location.txt date(optional)
 
 ```
 
